@@ -15,8 +15,20 @@ class PostController extends Controller
 
         $posts = Post::orderBy('created_at', 'desc') ->get();
 
-        return view('guests.post.index', compact('posts'));
+        return view('guests.posts.index', compact('posts'));
      }
 
+     /**
+      * POST DETAILS
+      */
+     public function show($slug){
+        $post = Post::where('slug', $slug)->first();
+
+        if (empty($post)){
+            abort('404');
+        }
+       
+        return view('guests.posts.show', compact('post'));
+     }
 
 }

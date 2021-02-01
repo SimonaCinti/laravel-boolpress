@@ -17,7 +17,7 @@
                     By {{$post->user->name}}
                     <div class="date">{{$post->updated_at->diffForHumans()}}</div>
                 </div>
-                <a href="">Read more</a>
+                <a href="{{route('posts.show', $post->slug)}}">Read more</a>
             </article>
         @endforeach
     @endif
