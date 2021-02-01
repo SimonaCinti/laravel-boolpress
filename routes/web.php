@@ -27,4 +27,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/**
+ * ROTTE PAGINE PER LOG IN
+ */
+
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->middleware('auth')
+    ->group(function(){
+
+    // Home Admin 
+    Route::get('/', 'HomeController@index')->name('home');
+        // Rotte Post
+
+    });
+// Route::get('/home', 'HomeController@index')->name('home');
