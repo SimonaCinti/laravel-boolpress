@@ -21,6 +21,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'HomeController@index')->name('home');
 
 /**
+ * ROTTE PUBBLICHE
+ */
+
+Route::get('posts', 'PostController@index')->name('posts.index');
+
+/**
  * LOG IN / REGISTRATION
  */
 
