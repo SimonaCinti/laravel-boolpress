@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Auth;
  * HOMEPAGE
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 /**
  * LOG IN / REGISTRATION
