@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Post extends Model
 {
     /**
@@ -15,4 +16,14 @@ class Post extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * FILLABLE MASS ASSIGN
+     */
+    protected $fillable = [
+        'user_id', 
+        'title', 
+        'body',
+        'slug',
+    ];
 }
